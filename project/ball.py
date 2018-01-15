@@ -6,13 +6,13 @@ class Ball(turtle):
 		Turtle.__init__(self)
 		self.penup()
 		self.setpos(x,y)
-		self.dx(dx)
-		self.dy(dy)
-		self.r(r)
+		self.dx= dx
+		self.dy= dy
+		self.r= r
 		self.shape("circle")
 		self.shapesize(r/10)
 		self.color(color)
-		self.hideturtle()
+		self.ht()
 
 	def move(self,screen_width, screen_height):
                 current_x= self.xcor()
