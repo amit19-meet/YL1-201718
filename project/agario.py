@@ -7,15 +7,15 @@ import math
 turtle.tracer(0)
 
 RUNNING= True
-SLEEP= 0.0077
+SLEEP= 0.0099
 SCREEN_WIDTH= round(turtle.getcanvas().winfo_width()/2)
 SCREEN_HEIGHT= round(turtle.getcanvas().winfo_height()/2)
 
-MY_BALL= Ball(0, 0, 3, 3, 50,"red")
+MY_BALL= Ball(0, 0, 3, 3, 55,"red")
 
 NUMBER_OF_BALLS= 5
 MINIMUM_BALL_RADIUS= 5
-MAXIMUM_BALL_RADIUS= 60
+MAXIMUM_BALL_RADIUS= 70
 MINIMUM_BALL_DX= -1
 MAXIMUM_BALL_DX= 1
 MINIMUM_BALL_DY= -1
@@ -120,30 +120,7 @@ def check_myball_collision():
                 MY_BALL.r+=1
                 MY_BALL.shapesize(MY_BALL.r/10)
     return True
-##
-##def check_myball_collision():
-##    for i in BALLS:
-##        if collide(MY_BALL,i):
-##            s= MY_BALL.r
-##            e= i.r
-##            if s<=e:
-##                return False
-##            else:
-##                smaller_ball= i
-##                smaller_ball.x= random.randint(int(-SCREEN_WIDTH) + MAXIMUM_BALL_RADIUS, int(SCREEN_WIDTH) - MAXIMUM_BALL_RADIUS)
-##                smaller_ball.y= random.randint(int(-SCREEN_HEIGHT) + MAXIMUM_BALL_RADIUS, int(SCREEN_HEIGHT) - MAXIMUM_BALL_RADIUS)
-##                smaller_ball.dx= random.randint(MINIMUM_BALL_DX, MAXIMUM_BALL_DX)
-##                while(smaller_ball.dx==0):
-##                    smaller_ball.dx= random.randint(MINIMUM_BALL_DX, MAXIMUM_BALL_DX)
-##                smaller_ball.dy= random.randint(MINIMUM_BALL_DY, MAXIMUM_BALL_DY)
-##                while(smaller_ball.dy==0):
-##                    smaller_ball.dy= random.randint(MINIMUM_BALL_DY, MAXIMUM_BALL_DY)
-##                smaller_ball.r= random.randint(MINIMUM_BALL_RADIUS, MAXIMUM_BALL_RADIUS)
-##                smaller_ball.color((random.random(), random.random(), random.random()))
-##                s=+1
-##                MY_BALL.shapesize(s=+1)
-##        return True
-##
+
 def move_around(event):
     MY_BALL.goto(event.x-SCREEN_WIDTH,SCREEN_HEIGHT-event.y)
 
